@@ -1434,6 +1434,10 @@ body {
   margin: 0 auto 24px;
 }
 
+.section--dress .section__title-script::before {
+  mix-blend-mode: multiply;
+}
+
 /* отключаем декор у details и wishes */
 .details .section__title-script::before,
 .video-line .section__title-script::before {
