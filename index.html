@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>Приглашение на свадьбу · Николь и Георгий</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="description" content="Приглашение на свадьбу" />
+  <meta property="og:title" content="Николь &amp; Георгий" />
+  <meta property="og:url" content="https://con-moto.github.io/tender-bw-wedding/" />
+  <meta property="og:image" content="./images/cover/jpg" />
+
+  <link rel="icon" type="image/png" href="./images/favicon.png" />
+  <link rel="stylesheet" href="./fonts/fonts.css" />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div class="page">
+    <!-- HERO -->
+    <header class="hero">
+      <div class="hero__content">
+        <div class="hero__column">
+          <div class="hero__names-block">
+            <div class="hero__names">
+              <span class="hero__name hero__name-top">
+                Никол<span class="hero__name-last">ь</span>
+              </span>
+              <span class="hero__name hero__name-and">And</span>
+              <span class="hero__name hero__name-bottom">
+                Георги<span class="hero__name-last">й</span>
+              </span>
+            </div>
+
+            <div class="hero__date-wrap">
+              <div class="hero__date">
+                <span class="hero__day">25.07</span>
+                <span class="hero__year">2026</span>
+              </div>
+              <div class="hero__text">ждём вас на нашей свадьбе</div>
+            </div>
+          </div>
+
+          <div class="hero__countdown">
+            <div class="hero__countdown-label">до дня свадьбы осталось</div>
+            <div class="hero__countdown-grid">
+              <div class="hero__countdown-item">
+                <span class="hero__countdown-number" id="cd-days">00</span>
+                <span class="hero__countdown-unit">дней</span>
+              </div>
+              <div class="hero__countdown-item">
+                <span class="hero__countdown-number" id="cd-hours">00</span>
+                <span class="hero__countdown-unit">часов</span>
+              </div>
+              <div class="hero__countdown-item">
+                <span class="hero__countdown-number" id="cd-minutes">00</span>
+                <span class="hero__countdown-unit">минут</span>
+              </div>
+              <div class="hero__countdown-item">
+                <span class="hero__countdown-number" id="cd-seconds">00</span>
+                <span class="hero__countdown-unit">секунд</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- NAV -->
+    <section class="hero-nav">
+      <nav class="hero-nav__inner">
+        <a href="#location" class="hero-nav__link">локация</a>
+        <a href="#timing" class="hero-nav__link">расписание</a>
+        <a href="#dresscode" class="hero-nav__link">дресс - код</a>
+        <a href="#rsvp" class="hero-nav__link">ответить</a>
+      </nav>
+    </section>
+
+    <!-- INVITATION -->
+    <section class="section section--invitation">
+      <div class="section__inner section__inner--narrow">
+        <h2 class="section__title-unique">Дорогие родные и близкие!</h2>
+        <p class="section__paragraph">
+          приглашаем вас разделить радость этого события!
+        </p>
+        <p class="section__paragraph">
+          мы не представляем этот день без вас!
+        </p>
+        <p class="section__paragraph paragraph-with-pseudo">
+          до 24 мая, пожалуйста, подтвердите ваше присутствие!
+        </p>
+        <a href="#rsvp" class="section__link">заполнить анкету</a>
+      </div>
+    </section>
+
+    <!-- PHOTO 1 -->
+    <section class="portrait">
+      <img src="./images/1.jpg" alt="Фото 1" class="portrait__img" />
+      <a href="#rsvp" class="reply-button">ответить</a>
+    </section>
+
+    <!-- LOCATION -->
+    <section class="section section--location" id="location">
+      <div class="section__inner section__inner--narrow">
+        <h2 class="section__title-script">Локация</h2>
+        <p class="section__paragraph">
+          ресторан география, ул. ленина, 2, москва
+        </p>
+        <a href="#rsvp" class="section__link">заполнить анкету</a>
+      </div>
+    </section>
+
+    <!-- PHOTO 2 -->
+    <section class="photo-band">
+      <img src="./images/2.jpg" alt="Фото 2" class="photo-band__img" />
+    </section>
+
+    <!-- TIMING -->
+    <section class="section section--timing" id="timing">
+      <div class="section__inner section__inner--wide">
+        <h2 class="section__title-script">Тайминг</h2>
+
+        <div class="timeline">
+          <div class="timeline__col timeline__col--left">
+            <div class="timeline__item">
+              <p class="timeline__text">
+                12:00 - регистрация в загсе
+              </p>
+              <p class="timeline__address">
+                ул. тихвинская, 11/16, великий новгород
+              </p>
+            </div>
+            <div class="timeline__item">
+              <p class="timeline__text">
+                16:30 - свадебный ужин
+              </p>
+              <p class="timeline__address">
+                ресторан география, ул. газон, 2, великий новгород
+              </p>
+            </div>
+            <div class="timeline__item">
+              <p class="timeline__text">
+                23:30 - окончание вечера
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline__col timeline__col--center">
+            <span class="timeline__dot"></span>
+            <span class="timeline__line"></span>
+            <span class="timeline__dot"></span>
+            <span class="timeline__line"></span>
+            <span class="timeline__dot"></span>
+            <span class="timeline__line timeline__line--last"></span>
+          </div>
+
+          <div class="timeline__col timeline__col--right">
+            <div class="timeline__item">
+              <p class="timeline__text">
+                15:00 - фотосессия
+              </p>
+              <p class="timeline__address">
+                ул. тихвинская, 11/16, великий новгород
+              </p>
+            </div>
+            <div class="timeline__item">
+              <p class="timeline__text">
+                21:00 - праздничный торт
+              </p>
+              <p class="timeline__address">
+                самые теплые пожелания и объятия
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PHOTO 3 -->
+    <section class="photo-band">
+      <img src="./images/3.jpg" alt="Фото 3" class="photo-band__img" />
+    </section>
+
+    <!-- DRESS CODE -->
+    <section class="section section--dress" id="dresscode">
+      <div class="section__inner section__inner--narrow">
+        <h2 class="section__title-script">Дресс - код</h2>
+        <p class="section__paragraph">
+          нам будет очень приятно, если вы поддержите цветовую гамму торжества
+        </p>
+        <div class="dress">
+          <span class="dress__dot dress__dot--1"></span>
+          <span class="dress__dot dress__dot--2"></span>
+          <span class="dress__dot dress__dot--3"></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- DETAILS -->
+    <section class="details section--dark" id="details">
+      <div class="wrapper">
+        <h2 class="section__title-script">Details</h2>
+        <form
+          id="details-form"
+          class="details-form"
+          action="https://wedding-backend-taupe.vercel.app/api/form"
+          method="POST"
+        >
+          <input type="hidden" name="form_type" value="details-form" />
+
+          <div class="details-row">
+            <div class="details-field">
+              <label for="details-first-name" class="form-label">Имя</label>
+              <input
+                class="input"
+                type="text"
+                id="details-first-name"
+                name="first_name"
+                placeholder="Ваше имя"
+                required
+              />
+            </div>
+            <div class="details-field">
+              <label for="details-last-name" class="form-label">Фамилия</label>
+              <input
+                class="input"
+                type="text"
+                id="details-last-name"
+                name="last_name"
+                placeholder="Ваша фамилия"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="details-block">
+            <h3 class="details-question">
+              Есть ли у вас особые предпочтения по еде?
+            </h3>
+            <div class="details-options">
+              <label class="details-option">
+                <input
+                  type="radio"
+                  name="food_preference"
+                  value="нет"
+                  checked
+                />
+                <span>нет</span>
+              </label>
+              <label class="details-option">
+                <input
+                  type="radio"
+                  name="food_preference"
+                  value="не ем мясо"
+                />
+                <span>не ем мясо</span>
+              </label>
+              <label class="details-option">
+                <input
+                  type="radio"
+                  name="food_preference"
+                  value="не ем рыбу"
+                />
+                <span>не ем рыбу</span>
+              </label>
+              <label class="details-option">
+                <input
+                  type="radio"
+                  name="food_preference"
+                  value="вегетарианец"
+                />
+                <span>вегетарианец</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="details-block">
+            <h3 class="details-question">
+              Какой алкоголь вы предпочитаете?
+            </h3>
+            <div class="details-options">
+              <label class="details-option">
+                <input type="checkbox" name="alcohol[]" value="Красное вино" />
+                <span>Красное вино</span>
+              </label>
+              <label class="details-option">
+                <input type="checkbox" name="alcohol[]" value="Белое вино" />
+                <span>Белое вино</span>
+              </label>
+              <label class="details-option">
+                <input type="checkbox" name="alcohol[]" value="Шампанское" />
+                <span>Шампанское</span>
+              </label>
+              <label class="details-option">
+                <input type="checkbox" name="alcohol[]" value="Виски/коньяк" />
+                <span>Виски/коньяк</span>
+              </label>
+              <label class="details-option">
+                <input type="checkbox" name="alcohol[]" value="Водка" />
+                <span>Водка</span>
+              </label>
+              <label class="details-option">
+                <input
+                  type="checkbox"
+                  name="alcohol[]"
+                  value="Не буду пить алкоголь"
+                />
+                <span>Не буду пить алкоголь</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="details-block">
+            <h3 class="details-question">
+              Будет ли с вами на празднике ребёнок?
+            </h3>
+            <div class="details-options">
+              <label class="details-option">
+                <input type="radio" name="child" value="Да" />
+                <span>Да</span>
+              </label>
+              <label class="details-option">
+                <input type="radio" name="child" value="Нет" checked />
+                <span>Нет</span>
+              </label>
+            </div>
+          </div>
+
+          <button type="submit" class="details-btn btn btn--light">
+            отправить
+          </button>
+          <p id="details-status" class="details-status"></p>
+        </form>
+      </div>
+    </section>
+
+    <!-- WISHES -->
+    <section class="video-line" id="wishes">
+      <video
+        class="video-line__video"
+        src="./images/file.mp4"
+        autoplay
+        muted
+        loop
+        playsinline
+      ></video>
+
+      <div class="video-line__overlay"></div>
+
+      <div class="video-line__inner">
+        <h2 class="section__title-script">Wishes</h2>
+
+        <div class="notes">
+          <article class="note">
+            <div class="note-number">1</div>
+            <p class="note-text">
+              Главное для нас - ваше присутствие на свадьбе и ваше внимание.
+              а радость доставит любой подарок в конверте
+            </p>
+          </article>
+
+          <article class="note">
+            <div class="note-number">2</div>
+            <p class="note-text">
+              Будем благодарны, если вы воздержитесь от криков «Горько»
+              на празднике, ведь поцелуй — это знак выражения чувств,
+              он не может быть по заказу.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- RSVP -->
+    <section id="rsvp" class="rsvp section">
+      <div class="wrapper">
+        <h2 class="section__title-script">Form</h2>
+        <p class="section-lead">
+          Мы будем очень рады видеть вас рядом. Пожалуйста, заполните форму ниже,
+          чтобы подтвердить своё присутствие на нашей свадьбе.
+        </p>
+
+        <form
+          id="rsvp-form"
+          class="rsvp-form"
+          action="https://wedding-backend-taupe.vercel.app/api/form"
+          method="POST"
+        >
+          <input type="hidden" name="form_type" value="rsvp-form" />
+          <input type="hidden" name="event" value="wedding-angelika-artur" />
+
+          <div class="rsvp-row">
+            <div class="rsvp-field">
+              <label for="field-name" class="form-label">Имя</label>
+              <input
+                class="input"
+                type="text"
+                id="field-name"
+                name="first_name"
+                placeholder="Ваше имя"
+                required
+              />
+            </div>
+            <div class="rsvp-field">
+              <label for="field-surname" class="form-label">Фамилия</label>
+              <input
+                class="input"
+                type="text"
+                id="field-surname"
+                name="last_name"
+                placeholder="Ваша фамилия"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="rsvp-field">
+            <span class="rsvp-label">Вы сможете присутствовать?</span>
+            <div class="rsvp-options">
+              <label class="rsvp-option">
+                <input
+                  type="radio"
+                  name="attendance"
+                  value="Да, с радостью буду"
+                  required
+                />
+                <span>Да, с радостью буду</span>
+              </label>
+              <label class="rsvp-option">
+                <input
+                  type="radio"
+                  name="attendance"
+                  value="К сожалению, не смогу"
+                />
+                <span>К сожалению, не смогу</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="rsvp-field">
+            <label for="field-message" class="form-label">
+              Комментарий (по желанию)
+            </label>
+            <textarea
+              class="textarea"
+              id="field-message"
+              name="message"
+              rows="3"
+              placeholder="Например: буду с +1, предпочтения по меню, время прибытия..."
+            ></textarea>
+          </div>
+
+          <button class="rsvp-btn btn btn--primary" type="submit">
+            Отправить ответ
+          </button>
+
+          <p class="rsvp-note">
+            Нажимая кнопку, вы отправите данные организатору.
+          </p>
+
+          <p class="rsvp-status status" id="rsvp-status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <section class="design-authors">
+      <div class="design-authors__inner">
+        <span class="design-authors__text">
+          Дизайн свадебных сайтов —
+          <a
+            href="https://t.me/GalinaBulgakova"
+            target="_blank"
+            class="design-authors__link"
+          >
+            @GalinaBulgakova
+          </a>
+        </span>
+
+        <a
+          href="https://t.me/GalinaBulgakova"
+          target="_blank"
+          class="design-authors__icon-link"
+          aria-label="Telegram Galina Bulgakova"
+        >
+          <svg
+            class="design-authors__icon"
+            viewBox="0 0 16 16"
+            aria-hidden="true"
+          >
+            <path
+              d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.287 5.906q-1.168.486-4.666 2.01-.567.225-.595.442c-.03.243.275.339.69.47l.175.055c.408.133.958.288 1.243.294q.39.01.868-.32 3.269-2.206 3.374-2.23c.05-.012.12-.026.166.016s.042.12.037.141c-.03.129-1.227 1.241-1.846 1.817-.193.18-.33.307-.358.336a8 8 0 0 1-.188.186c-.38.366-.664.64.015 1.088.327.216.589.393.85.571.284.194.568.387.936.629q.14.092.27.187c.331.236.63.448.997.414.214-.02.435-.22.547-.82.265-1.417.786-4.486.906-5.751a1.4 1.4 0 0 0-.013-.315.34.34 0 0 0-.114-.217.53.53 0 0 0-.31-.093c-.3.005-.763.166-2.984 1.09"
+            ></path>
+          </svg>
+        </a>
+      </div>
+    </section>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+@font-face {
+  font-family: "Monotype Corsiva";
+  src: url("./MonotypeCorsivaRegular.woff2") format("woff2"),
+       url("./MonotypeCorsivaRegular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Monotype Corsiva";
+  src: url("./MonotypeCorsivaRegularItalic.woff2") format("woff2"),
+       url("./MonotypeCorsivaRegularItalic.woff") format("woff");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Monotype Corsiva";
+  src: url("./MonotypeCorsivaBold.woff2") format("woff2"),
+       url("./MonotypeCorsivaBold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Monotype Corsiva";
+  src: url("./MonotypeCorsivaBoldItalic.woff2") format("woff2"),
+       url("./MonotypeCorsivaBoldItalic.woff") format("woff");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Elven Common Speak";
+  src: url("./ElvenCommonSpeak.woff2") format("woff2"),
+       url("./ElvenCommonSpeak.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Bebas Neue";
+  src: url("./BebasNeue-Thin.woff2") format("woff2"),
+       url("./BebasNeue-Thin.woff") format("woff");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Bebas Neue";
+  src: url("./BebasNeueLight.woff2") format("woff2"),
+       url("./BebasNeueLight.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Bebas Neue";
+  src: url("./BebasNeueBook.woff2") format("woff2"),
+       url("./BebasNeueBook.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Bebas Neue";
+  src: url("./BebasNeueRegular.woff2") format("woff2"),
+       url("./BebasNeueRegular.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Bebas Neue";
+  src: url("./BebasNeueBold.woff2") format("woff2"),
+       url("./BebasNeueBold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
