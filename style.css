@@ -1298,6 +1298,28 @@ body {
   }
 }
 
+@media (max-width: 750px) {
+  .hero {
+    justify-content: center;
+    align-items: center;
+    padding-inline-start: 16px;
+    padding-inline-end: 16px;
+  }
+
+  .hero__content {
+    margin-left: 0;
+    margin-right: 0;
+    padding-right: 0;
+    padding-left: 0;
+    max-width: 100%;
+  }
+
+  .hero__column {
+    max-width: 100%;
+  }
+}
+
+
 @media (max-width: 700px) {
   .portrait {
     padding: 70px 16px 100px;
