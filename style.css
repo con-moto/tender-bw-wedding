@@ -4,6 +4,8 @@
   --color-hero-text: #ffffff;
   --color-hero-muted: #cfcfcf;
 
+  --color-hero-overlay: rgba(0, 0, 0, 0.45);
+
   --color-countdown-bg: rgba(255, 255, 255, 0.12);
   --color-countdown-border: rgba(255, 255, 255, 0.36);
 
@@ -62,7 +64,6 @@
   --link-underline-offset: 3px;
 }
 
-
 /* reset */
 
 *, *::before, *::after {
@@ -85,10 +86,10 @@ body {
   margin: 0 auto;
 }
 
-
 /* === HERO === */
 
 .hero {
+  position: relative;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -106,7 +107,17 @@ body {
   background-repeat: no-repeat;
 }
 
+/* overlay над фоновой картинкой */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--color-hero-overlay);
+  pointer-events: none;
+}
+
 .hero__content {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -124,7 +135,6 @@ body {
   text-align: center;
   gap: 32px;
 }
-
 
 /* names */
 
@@ -192,14 +202,13 @@ body {
   margin-left: 1em;
 }
 
-
 /* date + text */
 
 .hero__date-wrap {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
+  gap: 12px;
   width: 100%;
 }
 
@@ -264,25 +273,23 @@ body {
   letter-spacing: 0.06em;
 }
 
-
 /* countdown */
 
 .hero__countdown {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 16px;
-  margin-top: 12px;
+  gap: 10px;
+  margin-top: 6px;
   width: 100%;
   max-width: 420px;
 }
 
 .hero__countdown-label {
-  font-family: var(--font-sans);
-  font-size: var(--fs-count-label);
-  letter-spacing: 0.26em;
-  text-transform: uppercase;
-  color: var(--color-hero-muted);
+  font-family: var(--font-mono);
+  font-size: var(--fs-hero-text);
+  letter-spacing: 0.06em;
+  color: #fff;
 }
 
 .hero__countdown-grid {
@@ -320,7 +327,6 @@ body {
   color: var(--color-hero-muted);
 }
 
-
 /* NAV */
 
 .hero-nav {
@@ -345,7 +351,7 @@ body {
   font-size: var(--fs-nav);
   letter-spacing: 0.26em;
   text-transform: uppercase;
-  color: var(--color-nav-link-muted);
+  color: var(--color-nav-link);
   text-decoration: none;
   padding-bottom: 4px;
 }
@@ -369,7 +375,6 @@ body {
   width: 100%;
 }
 
-
 /* === ОБЩИЕ СЕКЦИИ === */
 
 .section {
@@ -389,7 +394,6 @@ body {
   max-width: 1120px;
 }
 
-
 /* заголовки */
 
 .section__title-script {
@@ -406,7 +410,6 @@ body {
   padding-inline: 60px;
 }
 
-
 /* лейбл */
 
 .section__label-small {
@@ -418,7 +421,6 @@ body {
   text-align: center;
   margin-bottom: 24px;
 }
-
 
 /* основной текст */
 
@@ -449,7 +451,6 @@ body {
   margin-top: 22px;
 }
 
-
 /* divider */
 
 .section__divider {
@@ -459,7 +460,6 @@ body {
   margin: 32px auto;
 }
 
-
 /* ссылки в секциях */
 
 .section__link,
@@ -468,7 +468,7 @@ body {
   margin-top: 24px;
   font-family: var(--font-mono);
   font-size: var(--fs-hero-text);
-  text-decoration: none;
+  text-decoration: underline;
   text-underline-offset: 4px;
   text-transform: none;
   color: var(--color-text-main);
@@ -496,25 +496,22 @@ body {
   margin-right: 0;
 }
 
-.section__link::after,
+/* hover-эффект: доп. линия растёт из центра */
 .design-authors__link::after {
   content: "";
   position: absolute;
-  left: 0;
-  right: 0;
-  margin-inline: auto;
+  left: 50%;
   bottom: calc(-1 * var(--link-underline-offset));
   width: 0;
   height: var(--link-underline-height);
   background: currentColor;
+  transform: translateX(-50%);
   transition: width 0.25s ease;
 }
 
-.section__link:hover::after,
 .design-authors__link:hover::after {
   width: 100%;
 }
-
 
 /* === PHOTO BAND === */
 
@@ -532,12 +529,11 @@ body {
   object-fit: cover;
 }
 
-
 /* === INVITATION === */
+
 .section--invitation {
   position: relative;
 }
-
 
 .section--invitation .section__divider {
   display: none;
@@ -600,13 +596,11 @@ body {
   padding-bottom: 150px;
 }
 
-
 /* === LOCATION === */
 
 .section--location .section__paragraph {
   margin-bottom: 12px;
 }
-
 
 /* === TIMING === */
 
@@ -686,7 +680,6 @@ body {
   height: 60px;
 }
 
-
 /* === DRESS CODE === */
 
 .section--dress {
@@ -727,8 +720,11 @@ body {
   background: #f0e2d5;
 }
 
-
 /* === DETAILS === */
+.details {
+  margin-bottom: 48px;
+  opacity: 0.85;
+}
 
 .section--dark {
   background: var(--color-bg-dark);
@@ -766,7 +762,6 @@ body {
   letter-spacing: 0.24em;
   text-transform: uppercase;
 }
-
 
 /* поля */
 
@@ -842,7 +837,6 @@ body {
   accent-color: #fff;
 }
 
-
 /* кнопки */
 
 .btn {
@@ -882,7 +876,6 @@ body {
   text-align: center;
   opacity: 0.85;
 }
-
 
 /* === WISHES === */
 
@@ -956,7 +949,6 @@ body {
   font-weight: 400;
   letter-spacing: 0.18em;
 }
-
 
 /* === RSVP === */
 
@@ -1079,7 +1071,6 @@ body {
   text-align: center;
 }
 
-
 /* === FOOTER === */
 
 .design-authors {
@@ -1123,7 +1114,6 @@ body {
   fill: #fff;
 }
 
-
 /* === PORTRAIT === */
 
 .portrait {
@@ -1146,14 +1136,13 @@ body {
   margin: 0 auto;
 }
 
-/* псевдоэлементы сразу на 1.5 раза больше прежнего размера */
 .portrait::before,
 .portrait::after {
   content: "";
   position: absolute;
   top: 50%;
-  width: 169px; 
-  height: 250px; 
+  width: 169px;
+  height: 250px;
   transform: translateY(-50%);
   background-size: cover;
   background-position: center;
@@ -1190,7 +1179,6 @@ body {
   letter-spacing: 0.18em;
   font-size: 16px;
 }
-
 
 /* === ADAPTIVE === */
 
@@ -1229,7 +1217,7 @@ body {
     padding-block-end: 6%;
     padding-inline-end: 16px;
     padding-inline-start: 16px;
-    background-position: right;
+    background-position: left;
   }
 
   .hero__content {
@@ -1239,7 +1227,8 @@ body {
   }
 
   .section {
-    padding: var(--section-padding-block-mobile) var(--section-padding-inline-mobile);
+    padding-block: 80px;
+    padding-inline: var(--section-padding-inline-mobile);
   }
 
   .details .wrapper,
@@ -1310,7 +1299,6 @@ body {
 }
 
 @media (max-width: 700px) {
-
   .portrait {
     padding: 70px 16px 100px;
   }
@@ -1328,27 +1316,38 @@ body {
 
 @media (max-width: 600px) {
   .section__title-script {
-    font-size: 46px;
+    font-size: 40px;
   }
 
   .details .wrapper,
   .rsvp .wrapper {
-    padding-inline: 20px;
+    padding-inline: 16px;
   }
 
   .rsvp .wrapper {
-    padding-top: 60px;
-    padding-bottom: 60px;
+    padding-top: 50px;
+    padding-bottom: 50px;
   }
 
-  .portrait::before,
+  .portrait::before{
+    left: -5%;
+    overflow: hidden;
+  }
+
+
   .portrait::after {
-    display: none;
+    right: -5%;
+    overflow: hidden;
   }
 
   .video-line__inner {
     padding-top: 120px;
     padding-bottom: 120px;
+  }
+
+  .section {
+    padding-block: 70px;
+    padding-inline: 20px;
   }
 }
 
@@ -1373,46 +1372,32 @@ body {
   .hero-nav__link {
     font-size: 14px;
   }
-
 }
 
 @media (max-width: 450px) {
   .hero {
     justify-content: center;
   }
-  
+
   .hero__content {
     margin-left: 0;
     padding-right: 0;
     padding-top: 15%;
   }
 }
- 
-/* отдельный брейкпоинт под перестройку тайминга – сетка (порядок делает JS) */
-@media (max-width: 902px) {
-  .timeline {
-    grid-template-columns: 1fr;
-    row-gap: 32px;
+
+@media (max-width: 420px) {
+  .portrait::before{
+    left: -13%;
+    overflow: hidden;
   }
 
-  .timeline__col--center {
-    display: none;
-  }
 
-  .timeline__col--left,
-  .timeline__col--right {
-    align-items: center;
-    margin-block-start: 0;
-  }
-
-  .timeline__item,
-  .timeline__col--left .timeline__item,
-  .timeline__col--right .timeline__item {
-    max-width: 100%;
-    text-align: center;
+  .portrait::after {
+    right: -13%;
+    overflow: hidden;
   }
 }
-
 
 /* === ФИНАЛЬНЫЕ НАСТРОЙКИ ДЕКОРА И UNIQUE === */
 
