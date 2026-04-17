@@ -29,28 +29,32 @@
   --font-mono: "Monotype Corsiva", system-ui, serif;
   --font-sans: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
 
-  /* базовая типографика */
-  --fs-hero-name: clamp(40px, 6vw, 64px);
-  --fs-hero-and: clamp(16px, 2.4vw, 20px);
-  --fs-hero-date: 20px;
-  --fs-hero-text: 22px;
-  --fs-count-label: 14px;
-  --fs-count-number: 26px;
-  --fs-count-unit: 13px;
+  /* базовая типографика (в rem) */
+  --fs-hero-name: clamp(2.4rem, 4vw, 3.6rem);
+  --fs-hero-and: clamp(0.9rem, 1.4vw, 1.2rem);
+  --fs-hero-date: clamp(1rem, 1.6vw, 1.25rem);
+  --fs-hero-text: clamp(1.05rem, 1.8vw, 1.35rem);
 
-  --fs-nav: 16px;
+  /* COUNTDOWN */
+  --fs-count-label: clamp(0.75rem, 1.2vw, 0.9rem);
+  --fs-count-number: clamp(1.2rem, 2vw, 1.7rem);
+  --fs-count-unit: clamp(0.7rem, 1vw, 0.85rem);
 
-  --fs-section-title: 60px;
-  --fs-section-label: 18px;
-  --fs-section-body: 17px;
-  --fs-note: 18px;
+  /* NAV */
+  --fs-nav: clamp(0.85rem, 1.2vw, 1rem);
+
+  /* SECTIONS */
+  --fs-section-title: clamp(2rem, 4vw, 3.2rem);
+  --fs-section-label: clamp(0.9rem, 1.4vw, 1.1rem);
+  --fs-section-body: clamp(0.9rem, 1.4vw, 1.1rem);
+  --fs-note: clamp(0.95rem, 1.6vw, 1.2rem);                         /* ~19px */
 
   /* отступы */
-  --section-padding-block: 140px;
-  --section-padding-inline: 40px;
+  --section-padding-block: clamp(80px, 10vw, 140px);             /* 140px */
+  --section-padding-inline: 2.5rem;             /* 40px */
 
-  --section-padding-block-mobile: 100px;
-  --section-padding-inline-mobile: 20px;
+  --section-padding-block-mobile: clamp(60px, 8vw, 100px);      /* 100px */
+  --section-padding-inline-mobile: 1.25rem;     /* 20px */
 
   /* линии */
   --divider-width: 80px;
@@ -63,6 +67,7 @@
   --link-underline-height: 1px;
   --link-underline-offset: 3px;
 }
+
 
 /* reset */
 
@@ -77,14 +82,23 @@ body {
   height: 100%;
 }
 
+/* база для rem */
+html {
+  font-size: 16px;
+}
+
 body {
   font-family: var(--font-bebas);
   background-color: #fff;
+  font-size: 1rem;
+   -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 .page {
   margin: 0 auto;
 }
+
 
 /* === HERO === */
 
@@ -93,9 +107,10 @@ body {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-
-  padding-block-start: 10%;
-  padding-block-end: 3%;
+  min-height: 100vh;
+  height: 100vh;
+  padding-block-start: clamp(80px, 10vh, 140px);
+  padding-block-end: clamp(40px, 6vh, 80px);
   padding-inline-end: 13%;
 
   background: var(--color-hero-bg);
@@ -133,7 +148,7 @@ body {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  gap: 32px;
+  gap: clamp(20px, 3vh, 32px);
 }
 
 /* names */
@@ -142,7 +157,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 32px;
+  gap: clamp(20px, 3vh, 32px);
 }
 
 .hero__names {
@@ -279,7 +294,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
+  gap: clamp(8px, 1.5vh, 12px);
   margin-top: 6px;
   width: 100%;
   max-width: 420px;
@@ -314,7 +329,7 @@ body {
   font-family: var(--font-bebas);
   font-weight: 400;
   font-size: var(--fs-count-number);
-  letter-spacing: 0.18em;
+  letter-spacing: 0.16em;
 }
 
 .hero__countdown-unit {
@@ -322,10 +337,11 @@ body {
   margin-top: 4px;
   font-family: var(--font-sans);
   font-size: var(--fs-count-unit);
-  letter-spacing: 0.2em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--color-hero-muted);
 }
+
 
 /* NAV */
 
@@ -374,6 +390,7 @@ body {
 .hero-nav__link:hover::after {
   width: 100%;
 }
+
 
 /* === ОБЩИЕ СЕКЦИИ === */
 
@@ -438,7 +455,7 @@ body {
   font-weight: 400;
   font-size: var(--fs-section-body);
   line-height: 1.8;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   text-align: center;
 }
@@ -513,6 +530,7 @@ body {
   width: 100%;
 }
 
+
 /* === PHOTO BAND === */
 
 .photo-band {
@@ -528,6 +546,7 @@ body {
   display: block;
   object-fit: cover;
 }
+
 
 /* === INVITATION === */
 
@@ -596,11 +615,13 @@ body {
   padding-bottom: 150px;
 }
 
+
 /* === LOCATION === */
 
 .section--location .section__paragraph {
   margin-bottom: 12px;
 }
+
 
 /* === TIMING === */
 
@@ -647,11 +668,12 @@ body {
 }
 
 .timeline__text {
-  font-size: var(--fs-section-body);
+  font-size: clamp(0.9rem, 1.4vw, 1.1rem);
 }
 
 .timeline__address {
-  font-size: 13px;
+  font-size: clamp(0.75rem, 1.1vw, 0.9rem);
+  letter-spacing: 0.08em;
   opacity: 0.9;
 }
 
@@ -679,6 +701,7 @@ body {
 .timeline__line.timeline__line--last {
   height: 60px;
 }
+
 
 /* === DRESS CODE === */
 
@@ -720,7 +743,9 @@ body {
   background: #f0e2d5;
 }
 
+
 /* === DETAILS === */
+
 .details {
   margin-bottom: 48px;
   opacity: 0.85;
@@ -758,8 +783,8 @@ body {
   display: block;
   margin-bottom: 10px;
   font-family: var(--font-bebas);
-  font-size: 16px;
-  letter-spacing: 0.24em;
+  font-size: clamp(0.8rem, 1.2vw, 1rem);
+  letter-spacing: 0.18em;
   text-transform: uppercase;
 }
 
@@ -775,8 +800,8 @@ body {
   color: #fff;
   font-family: var(--font-bebas);
   font-weight: 300;
-  font-size: 18px;
-  letter-spacing: 0.18em;
+  font-size: clamp(0.95rem, 1.4vw, 1.125rem);
+  letter-spacing: 0.16em;
   text-transform: uppercase;
 }
 
@@ -825,8 +850,8 @@ body {
   cursor: pointer;
   font-family: var(--font-bebas);
   font-weight: 300;
-  font-size: 16px;
-  letter-spacing: 0.22em;
+  font-size: 1rem;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
 }
 
@@ -847,7 +872,7 @@ body {
   border-radius: 999px;
   border: 1px solid #fff;
   font-family: var(--font-bebas);
-  font-size: 16px;
+  font-size: 1rem;
   letter-spacing: 0.26em;
   text-transform: uppercase;
   cursor: pointer;
@@ -872,10 +897,11 @@ body {
 
 .details-status {
   margin-top: 16px;
-  font-size: 14px;
+  font-size: 0.875rem;
   text-align: center;
   opacity: 0.85;
 }
+
 
 /* === WISHES === */
 
@@ -886,7 +912,7 @@ body {
 
 .video-line__video {
   width: 100%;
-  height: 520px;
+  height: clamp(320px, 60vh, 520px);
   object-fit: cover;
   display: block;
 }
@@ -947,8 +973,9 @@ body {
   font-size: var(--fs-note);
   line-height: 2;
   font-weight: 400;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.14em;
 }
+
 
 /* === RSVP === */
 
@@ -995,8 +1022,8 @@ body {
   display: block;
   margin-bottom: 12px;
   font-family: var(--font-bebas);
-  font-size: 18px;
-  letter-spacing: 0.24em;
+  font-size: 1.1rem;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
 }
 
@@ -1013,8 +1040,8 @@ body {
   gap: 12px;
   cursor: pointer;
   font-family: var(--font-bebas);
-  font-size: 18px;
-  letter-spacing: 0.22em;
+  font-size: 1.1rem;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
 }
 
@@ -1030,7 +1057,7 @@ body {
   border-color: rgba(0, 0, 0, 0.4);
   color: #000;
   background: transparent;
-  font-size: 18px;
+  font-size: 1.125rem;
 }
 
 .rsvp.section .input::placeholder,
@@ -1061,15 +1088,16 @@ body {
 
 .rsvp-note {
   margin-top: 16px;
-  font-size: 14px;
+  font-size: 0.875rem;
   text-align: center;
 }
 
 .rsvp-status {
   margin-top: 16px;
-  font-size: 14px;
+  font-size: 0.875rem;
   text-align: center;
 }
+
 
 /* === FOOTER === */
 
@@ -1091,8 +1119,8 @@ body {
 
 .design-authors__text {
   font-family: var(--font-bebas);
-  font-size: 16px;
-  letter-spacing: 0.22em;
+  font-size: 1rem;
+  letter-spacing: 0.18em;
   color: var(--color-text-footer);
   text-transform: uppercase;
   text-align: center;
@@ -1113,6 +1141,7 @@ body {
   height: 24px;
   fill: #fff;
 }
+
 
 /* === PORTRAIT === */
 
@@ -1177,8 +1206,9 @@ body {
   align-items: center;
   justify-content: center;
   letter-spacing: 0.18em;
-  font-size: 16px;
+  font-size: 1rem;
 }
+
 
 /* === ADAPTIVE === */
 
@@ -1192,8 +1222,8 @@ body {
   }
 
   :root {
-    --fs-hero-name: clamp(38px, 5.2vw, 58px);
-    --fs-hero-text: 20px;
+    --fs-hero-name: clamp(2.3rem, 3.8vw, 3.4rem);
+    --fs-hero-text: 1.25rem;
   }
 }
 
@@ -1203,8 +1233,8 @@ body {
   }
 
   :root {
-    --fs-hero-name: clamp(34px, 4.8vw, 52px);
-    --fs-hero-text: 18px;
+    --fs-hero-name: clamp(2.1rem, 3.4vw, 3.1rem);
+    --fs-hero-text: 1.15rem;
   }
 }
 
@@ -1319,7 +1349,6 @@ body {
   }
 }
 
-
 @media (max-width: 700px) {
   .portrait {
     padding: 70px 16px 100px;
@@ -1332,13 +1361,13 @@ body {
 
 @media (max-width: 660px) {
   .note-text {
-    font-size: var(--fs-section-body);
+    font-size: 1.05rem;
   }
 }
 
 @media (max-width: 600px) {
   .section__title-script {
-    font-size: 40px;
+    font-size: 2.5rem;
   }
 
   .details .wrapper,
@@ -1355,7 +1384,6 @@ body {
     left: -5%;
     overflow: hidden;
   }
-
 
   .portrait::after {
     right: -5%;
@@ -1375,8 +1403,12 @@ body {
 
 @media (max-width: 480px) {
   :root {
-    --fs-count-number: 20px;
-    --fs-count-unit: 11px;
+    --fs-count-number: 1.25rem;
+    --fs-count-unit: 0.75rem;
+  }
+
+  .hero {
+    background-position: center;
   }
 
   .hero__countdown-grid {
@@ -1387,12 +1419,13 @@ body {
     padding-inline: 6px;
   }
 
+
   .note-text {
-    font-size: 14px;
+    font-size: 0.95rem;
   }
 
   .hero-nav__link {
-    font-size: 14px;
+    font-size: 0.9rem;
   }
 }
 
@@ -1414,12 +1447,12 @@ body {
     overflow: hidden;
   }
 
-
   .portrait::after {
     right: -13%;
     overflow: hidden;
   }
 }
+
 
 /* === ФИНАЛЬНЫЕ НАСТРОЙКИ ДЕКОРА И UNIQUE === */
 
@@ -1453,7 +1486,7 @@ body {
 
 /* unique — шрифт в 2 раза меньше базового section title */
 .section__title-unique {
-  font-size: 16px;
+  font-size: 1rem;
   text-transform: none;
   letter-spacing: 0.2em;
   padding: 18px 40px;
@@ -1461,4 +1494,93 @@ body {
   border-bottom: 1px solid #000;
   display: inline-block;
   margin-bottom: 70px;
+}
+
+
+/* === МИКРО-АНИМАЦИИ (очень мягкие) === */
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* базовый класс */
+.animate {
+  opacity: 0;
+  animation: fadeUp 0.8s ease forwards;
+}
+
+/* задержки */
+.animate-delay-1 { animation-delay: 0.2s; }
+.animate-delay-2 { animation-delay: 0.4s; }
+.animate-delay-3 { animation-delay: 0.6s; }
+
+
+/* === ПРИМЕНЕНИЕ АНИМАЦИЙ (точечно, без перегруза) === */
+
+.hero__names-block {
+  animation: fadeUp 1s ease forwards;
+}
+
+.hero__countdown {
+  animation: fadeUp 1s ease 0.3s forwards;
+  opacity: 0;
+}
+
+.section__inner {
+  animation: fadeUp 0.9s ease forwards;
+}
+
+
+/* === HOVER МИКРО-ЭФФЕКТЫ === */
+
+.section__link,
+.reply-button,
+.btn {
+  transition: all 0.3s ease;
+}
+
+.section__link:hover {
+  opacity: 0.7;
+  transform: translateY(-2px);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+
+/* === УЛУЧШЕНИЕ ЧИТАЕМОСТИ НА МОБИЛКАХ === */
+
+@media (max-width: 600px) {
+  html {
+    font-size: clamp(13px, 3.2vw, 15px);
+  }
+
+  .hero__name {
+    letter-spacing: 0.18em;
+  }
+
+  .section__paragraph {
+    line-height: 1.6;
+  }
+
+  .note-text {
+    line-height: 1.8;
+  }
+}
+
+
+/* === VERY SMALL DEVICES === */
+
+@media (max-width: 400px) {
+  html {
+    font-size: 13px;
+  }
 }
