@@ -29,32 +29,32 @@
   --font-mono: "Monotype Corsiva", system-ui, serif;
   --font-sans: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
 
-  /* базовая типографика (в rem) */
-  --fs-hero-name: clamp(2.4rem, 4vw, 3.6rem);
-  --fs-hero-and: clamp(0.9rem, 1.4vw, 1.2rem);
-  --fs-hero-date: clamp(1rem, 1.6vw, 1.25rem);
-  --fs-hero-text: clamp(1.05rem, 1.8vw, 1.35rem);
+  /* базовая типографика (в rem) — hero немного крупнее */
+  --fs-hero-name: clamp(2.7rem, 4.4vw, 3.9rem);   /* было 2.4–3.6 */
+  --fs-hero-and: clamp(1.1rem, 1.6vw, 1.4rem);    /* было 0.9–1.2 */
+  --fs-hero-date: clamp(1.1rem, 1.8vw, 1.4rem);   /* + ~25% */
+  --fs-hero-text: clamp(1.3rem, 2.1vw, 1.6rem);   /* было 1.05–1.35 */
 
-  /* COUNTDOWN */
+  /* COUNTDOWN (оставляем как было) */
   --fs-count-label: clamp(0.75rem, 1.2vw, 0.9rem);
   --fs-count-number: clamp(1.2rem, 2vw, 1.7rem);
   --fs-count-unit: clamp(0.7rem, 1vw, 0.85rem);
 
   /* NAV */
-  --fs-nav: clamp(0.85rem, 1.2vw, 1rem);
+  --fs-nav: clamp(0.9rem, 1.3vw, 1.1rem);
 
-  /* SECTIONS */
-  --fs-section-title: clamp(2rem, 4vw, 3.2rem);
-  --fs-section-label: clamp(0.9rem, 1.4vw, 1.1rem);
-  --fs-section-body: clamp(0.9rem, 1.4vw, 1.1rem);
-  --fs-note: clamp(0.95rem, 1.6vw, 1.2rem);                         /* ~19px */
+  /* SECTIONS — базовый скейл, дальше параграфы/таймлайн/links расширяем локально */
+  --fs-section-title: clamp(2.2rem, 4.2vw, 3.4rem);
+  --fs-section-label: clamp(0.95rem, 1.5vw, 1.2rem);
+  --fs-section-body: clamp(1rem, 1.6vw, 1.25rem);
+  --fs-note: clamp(1.05rem, 1.8vw, 1.35rem);
 
   /* отступы */
-  --section-padding-block: clamp(80px, 10vw, 140px);             /* 140px */
-  --section-padding-inline: 2.5rem;             /* 40px */
+  --section-padding-block: clamp(80px, 10vw, 140px);
+  --section-padding-inline: 2.5rem;
 
-  --section-padding-block-mobile: clamp(60px, 8vw, 100px);      /* 100px */
-  --section-padding-inline-mobile: 1.25rem;     /* 20px */
+  --section-padding-block-mobile: clamp(60px, 8vw, 100px);
+  --section-padding-inline-mobile: 1.25rem;
 
   /* линии */
   --divider-width: 80px;
@@ -67,7 +67,6 @@
   --link-underline-height: 1px;
   --link-underline-offset: 3px;
 }
-
 
 /* reset */
 
@@ -91,14 +90,13 @@ body {
   font-family: var(--font-bebas);
   background-color: #fff;
   font-size: 1rem;
-   -webkit-font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
 
 .page {
   margin: 0 auto;
 }
-
 
 /* === HERO === */
 
@@ -301,9 +299,10 @@ body {
 }
 
 .hero__countdown-label {
-  font-family: var(--font-mono);
+  font-family: var(--font-bebas-light-weight);
   font-size: var(--fs-hero-text);
   letter-spacing: 0.06em;
+  text-transform: uppercase;
   color: #fff;
 }
 
@@ -341,7 +340,6 @@ body {
   text-transform: uppercase;
   color: var(--color-hero-muted);
 }
-
 
 /* NAV */
 
@@ -390,7 +388,6 @@ body {
 .hero-nav__link:hover::after {
   width: 100%;
 }
-
 
 /* === ОБЩИЕ СЕКЦИИ === */
 
@@ -460,8 +457,10 @@ body {
   text-align: center;
 }
 
+/* параграфы — немного крупнее base (но меньше, чем в прошлой версии) */
 .section__paragraph {
   margin-bottom: 14px;
+  font-size: clamp(1.2rem, 1.9vw, 1.45rem);
 }
 
 .section__paragraph--bottom {
@@ -479,12 +478,23 @@ body {
 
 /* ссылки в секциях */
 
-.section__link,
 .design-authors__link {
   display: inline-block;
   margin-top: 24px;
   font-family: var(--font-mono);
   font-size: var(--fs-hero-text);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-transform: none;
+  color: var(--color-text-main);
+  position: relative;
+}
+
+.section__link {
+  display: inline-block;
+  margin-top: 24px;
+  font-family: var(--font-mono);
+  font-size: clamp(1.3rem, 2vw, 1.7rem); /* мягче, чем 1.6–2.0, но заметно крупнее */
   text-decoration: underline;
   text-underline-offset: 4px;
   text-transform: none;
@@ -530,7 +540,6 @@ body {
   width: 100%;
 }
 
-
 /* === PHOTO BAND === */
 
 .photo-band {
@@ -546,7 +555,6 @@ body {
   display: block;
   object-fit: cover;
 }
-
 
 /* === INVITATION === */
 
@@ -615,13 +623,11 @@ body {
   padding-bottom: 150px;
 }
 
-
 /* === LOCATION === */
 
 .section--location .section__paragraph {
   margin-bottom: 12px;
 }
-
 
 /* === TIMING === */
 
@@ -667,12 +673,13 @@ body {
   text-align: left;
 }
 
+/* timeline text — такие же, как section__paragraph */
 .timeline__text {
-  font-size: clamp(0.9rem, 1.4vw, 1.1rem);
+  font-size: clamp(1.2rem, 1.9vw, 1.45rem);
 }
 
 .timeline__address {
-  font-size: clamp(0.75rem, 1.1vw, 0.9rem);
+  font-size: clamp(1rem, 1.6vw, 1.25rem);
   letter-spacing: 0.08em;
   opacity: 0.9;
 }
@@ -701,7 +708,6 @@ body {
 .timeline__line.timeline__line--last {
   height: 60px;
 }
-
 
 /* === DRESS CODE === */
 
@@ -742,7 +748,6 @@ body {
 .dress__dot--3 {
   background: #f0e2d5;
 }
-
 
 /* === DETAILS === */
 
@@ -902,7 +907,6 @@ body {
   opacity: 0.85;
 }
 
-
 /* === WISHES === */
 
 .video-line {
@@ -975,7 +979,6 @@ body {
   font-weight: 400;
   letter-spacing: 0.14em;
 }
-
 
 /* === RSVP === */
 
@@ -1098,7 +1101,6 @@ body {
   text-align: center;
 }
 
-
 /* === FOOTER === */
 
 .design-authors {
@@ -1141,7 +1143,6 @@ body {
   height: 24px;
   fill: #fff;
 }
-
 
 /* === PORTRAIT === */
 
@@ -1209,7 +1210,6 @@ body {
   font-size: 1rem;
 }
 
-
 /* === ADAPTIVE === */
 
 @media (max-width: 1440px) {
@@ -1222,8 +1222,8 @@ body {
   }
 
   :root {
-    --fs-hero-name: clamp(2.3rem, 3.8vw, 3.4rem);
-    --fs-hero-text: 1.25rem;
+    --fs-hero-name: clamp(2.6rem, 4vw, 3.5rem);
+    --fs-hero-text: clamp(1.2rem, 1.9vw, 1.45rem);
   }
 }
 
@@ -1233,8 +1233,8 @@ body {
   }
 
   :root {
-    --fs-hero-name: clamp(2.1rem, 3.4vw, 3.1rem);
-    --fs-hero-text: 1.15rem;
+    --fs-hero-name: clamp(2.4rem, 3.6vw, 3.2rem);
+    --fs-hero-text: clamp(1.1rem, 1.7vw, 1.35rem);
   }
 }
 
@@ -1419,7 +1419,6 @@ body {
     padding-inline: 6px;
   }
 
-
   .note-text {
     font-size: 0.95rem;
   }
@@ -1453,7 +1452,6 @@ body {
   }
 }
 
-
 /* === ФИНАЛЬНЫЕ НАСТРОЙКИ ДЕКОРА И UNIQUE === */
 
 /* все заголовки секций — шрифт mono */
@@ -1484,9 +1482,9 @@ body {
   content: none;
 }
 
-/* unique — шрифт в 2 раза меньше базового section title */
+/* unique — шрифт в 2 раза меньше базового section title, но увеличен vs 1rem */
 .section__title-unique {
-  font-size: 1rem;
+  font-size: clamp(1.25rem, 2vw, 1.6rem);
   text-transform: none;
   letter-spacing: 0.2em;
   padding: 18px 40px;
@@ -1495,7 +1493,6 @@ body {
   display: inline-block;
   margin-bottom: 70px;
 }
-
 
 /* === МИКРО-АНИМАЦИИ (очень мягкие) === */
 
@@ -1521,7 +1518,6 @@ body {
 .animate-delay-2 { animation-delay: 0.4s; }
 .animate-delay-3 { animation-delay: 0.6s; }
 
-
 /* === ПРИМЕНЕНИЕ АНИМАЦИЙ (точечно, без перегруза) === */
 
 .hero__names-block {
@@ -1536,7 +1532,6 @@ body {
 .section__inner {
   animation: fadeUp 0.9s ease forwards;
 }
-
 
 /* === HOVER МИКРО-ЭФФЕКТЫ === */
 
@@ -1554,7 +1549,6 @@ body {
 .btn:hover {
   transform: translateY(-2px);
 }
-
 
 /* === УЛУЧШЕНИЕ ЧИТАЕМОСТИ НА МОБИЛКАХ === */
 
@@ -1576,11 +1570,16 @@ body {
   }
 }
 
-
 /* === VERY SMALL DEVICES === */
 
 @media (max-width: 400px) {
   html {
     font-size: 13px;
+  }
+}
+
+@media (max-width: 375px) {
+  .section__title-unique {
+    font-size: 14px;
   }
 }
